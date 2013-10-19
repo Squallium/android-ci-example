@@ -12,15 +12,41 @@
     <description>Example of an Android CI Project</description>
     <url>https://github.com/Squallium/android-ci-example</url>
     <inceptionYear>2013</inceptionYear>
-    
-    <dependencies>
-        <dependency>
-            <groupId>android</groupId>
-            <artifactId>android</artifactId>
-            <version>4.2.2_r2</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>    
+
+    <modules>
+        <module>library</module>
+    </modules>
+
+    <developers>
+        <developer>
+            <name>Borja Refoyo Ruiz</name>
+            <email>squallium3@gmail.com</email>
+            <id>Squallium</id>
+            <url>http://borjarefoyo.com</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Borja Refoyo Ruiz</name>
+        <url>http://borjarefoyo.com</url>
+    </organization>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/Squallium/android-ci-example/issues</url>
+    </issueManagement>
 
     <distributionManagement>
         <repository>
@@ -35,6 +61,24 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <properties>
+        <java.version>1.6</java.version>
+        <android.version>4.2.2_r2</android.version>
+        <android.platform>17</android.platform>
+        <android-maven.version>3.7.0</android-maven.version>
+    </properties>
+
+    
+    <dependencies>
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <version>${android.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>    
+
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <sourceDirectory>src</sourceDirectory>
@@ -43,7 +87,7 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.7.0</version>
+                    <version>${android-maven.version}</version>
                     <extensions>true</extensions>
                 </plugin>
             </plugins>
@@ -53,8 +97,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${java.version>}</source>
+                    <target>${java.version>}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -63,7 +107,7 @@
                 <configuration>
                     <sdk>
                         <!-- platform or api level (api level 4 = platform 1.6) -->
-                        <platform>17</platform>
+                        <platform>${android.platform}</platform>
                     </sdk>
                 </configuration>
             </plugin>
