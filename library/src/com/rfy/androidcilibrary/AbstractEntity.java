@@ -1,12 +1,12 @@
 package com.rfy.androidcilibrary;
 
+import com.google.gson.Gson;
+
 public class AbstractEntity {
 
 	// ===========================================================
 	// Constants
 	// ===========================================================
-
-	private static final String TAG = AbstractEntity.class.getSimpleName();
 
 	// ===========================================================
 	// Fields
@@ -22,7 +22,8 @@ public class AbstractEntity {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 
 	// ===========================================================
