@@ -25,8 +25,8 @@
 				<storeApkName>${project.artifactId}-${store}</storeApkName>
 				<sign.keystore>${env.HOME}/.keystores/Keystore_Test</sign.keystore>
 				<sign.alias>android-ci</sign.alias>
-				<sign.keypass>borja</sign.keypass>
-				<sign.storepass>borja</sign.storepass>
+				<sign.keypass>borjaci</sign.keypass>
+				<sign.storepass>borjaci</sign.storepass>
 			</properties>
 			<activation>
 				<property>
@@ -38,11 +38,6 @@
 	</profiles>
 
 	<dependencies>
-		<dependency>
-			<groupId>android.support</groupId>
-			<artifactId>compatibility-v4</artifactId>
-			<version>18</version>
-		</dependency>
 		<dependency>
 			<groupId>com.rfy.androidci</groupId>
 			<artifactId>library</artifactId>
