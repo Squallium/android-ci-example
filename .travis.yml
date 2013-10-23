@@ -32,4 +32,4 @@ before_install:
   - find $ANDROID_HOME/build-tools
   - file $ANDROID_HOME/build-tools/18.0.1/aapt
 
-install: mvn install -P travis -DskipTests=true
+script: mvn install -P travis
