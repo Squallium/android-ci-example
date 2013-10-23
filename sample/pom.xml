@@ -35,6 +35,25 @@
 				</property>
 			</activation>
 		</profile>
+		<profile>
+			<id>travis</id>
+			<properties>
+				<store>google</store>
+				<storeManifestPath></storeManifestPath>
+				<storeResourcePath></storeResourcePath>
+				<storeApkName>${project.artifactId}-${store}</storeApkName>
+				<sign.keystore>${env.HOME}/Squallium/android-ci-example/.keystores/Keystore_Test</sign.keystore>
+				<sign.alias>android-ci</sign.alias>
+				<sign.keypass>borjaci</sign.keypass>
+				<sign.storepass>borjaci</sign.storepass>
+			</properties>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+		</profile>
 	</profiles>
 
 	<dependencies>
