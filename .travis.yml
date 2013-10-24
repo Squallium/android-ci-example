@@ -35,4 +35,4 @@ before_install:
 install: mvn install -P travis
 
 script: 
-  - mvn test -P travis -B
+  - mvn -version
